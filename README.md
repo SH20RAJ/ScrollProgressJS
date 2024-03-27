@@ -1,4 +1,4 @@
-# ScrollProgressJS
+# ScrollProgressJS [![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2FScrollProgressJS&labelColor=%23ff8a65&countColor=%2337d67a&labelStyle=upper)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2FScrollProgressJS)
 
 ScrollProgressJS is a lightweight JavaScript library that creates a customizable scroll progress indicator for web pages. It allows you to display a visual progress bar indicating how much of the page has been scrolled.
 
