@@ -8,6 +8,16 @@ var ScrollProgress = (function() {
     position: 'top'
   };
 
+  // Function to update the progress bar
+  function updateProgressBar(progressBar) {
+    return function() {
+      var scroll = document.documentElement.scrollTop || document.body.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (scroll / height) * 100;
+      progressBar.style.width = scrolled + '%';
+    };
+  }
+
   function init(customConfig) {
     // Merge custom configuration with default config
     if (customConfig && typeof customConfig === 'object') {
@@ -34,25 +44,22 @@ var ScrollProgress = (function() {
     document.body.appendChild(progressBar);
 
     // Function to update the progress bar
-    function updateProgressBar() {
-      var scroll = document.documentElement.scrollTop || document.body.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (scroll / height) * 100;
-      progressBar.style.width = scrolled + '%';
-    }
+    var onScroll = updateProgressBar(progressBar);
 
     // Event listener for scroll
-    window.addEventListener('scroll', updateProgressBar);
+    window.addEventListener('scroll', onScroll);
 
     // Initial call to set the progress bar
-    updateProgressBar();
+    onScroll();
   }
 
   // Public method to update configuration
   function setConfig(newConfig) {
+    destroy()
     if (newConfig && typeof newConfig === 'object') {
       config = Object.assign({}, config, newConfig);
     }
+    init()
   }
 
   // Public method to destroy the progress bar
@@ -64,6 +71,11 @@ var ScrollProgress = (function() {
     }
   }
 
+  // Auto-initialize if data-autoload is set to true
+  if (document.currentScript.dataset.autoload) {
+    init();
+  }
+
   // Expose public methods
   return {
     init: init,
@@ -71,4 +83,3 @@ var ScrollProgress = (function() {
     destroy: destroy
   };
 })();
-if(document.currentScript.dataset.autoload) ScrollProgress.init()
