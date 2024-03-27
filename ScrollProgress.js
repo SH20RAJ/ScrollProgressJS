@@ -1,23 +1,18 @@
-// scrollprogress.js
+// ScrollProgress.js
 
 var ScrollProgress = (function() {
-  var initialized = false;
-
   // Default configuration
-  var defaultConfig = {
-    color: '#4caf50',
-    height: '2px',
+  var config = {
+    color: '#ff5722',
+    height: '4px',
     position: 'top'
   };
 
   function init(customConfig) {
-    // If already initialized or auto-init is disabled, return
-    if (initialized || !shouldAutoInit()) {
-      return;
-    }
-
     // Merge custom configuration with default config
-    var config = Object.assign({}, defaultConfig, customConfig);
+    if (customConfig && typeof customConfig === 'object') {
+      config = Object.assign({}, config, customConfig);
+    }
 
     // Create the progress bar element
     var progressBar = document.createElement('div');
@@ -51,15 +46,12 @@ var ScrollProgress = (function() {
 
     // Initial call to set the progress bar
     updateProgressBar();
-
-    // Set initialized to true
-    initialized = true;
   }
 
   // Public method to update configuration
   function setConfig(newConfig) {
     if (newConfig && typeof newConfig === 'object') {
-      defaultConfig = Object.assign({}, defaultConfig, newConfig);
+      config = Object.assign({}, config, newConfig);
     }
   }
 
@@ -69,14 +61,7 @@ var ScrollProgress = (function() {
     if (progressBar) {
       progressBar.parentNode.removeChild(progressBar);
       window.removeEventListener('scroll', updateProgressBar);
-      initialized = false;
     }
-  }
-
-  // Determine if auto-init should occur based on script tag attribute
-  function shouldAutoInit() {
-    var scriptTag = document.currentScript;
-    return scriptTag && scriptTag.dataset.autoload === 'true';
   }
 
   // Expose public methods
@@ -86,8 +71,4 @@ var ScrollProgress = (function() {
     destroy: destroy
   };
 })();
-
-// Auto-initialize if data-autoload is set to true
-if (document.currentScript.dataset.autoload) {
-  ScrollProgress.init();
-}
+if(document.currentScript.dataset.autoload) ScrollProgress.init()
