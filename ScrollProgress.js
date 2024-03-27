@@ -88,6 +88,6 @@ var ScrollProgress = (function() {
 })();
 
 // Auto-initialize if data-autoload is set to true
-if (ScrollProgress.shouldAutoInit()) {
+if (document.currentScript.dataset.autoload) {
   ScrollProgress.init();
 }
