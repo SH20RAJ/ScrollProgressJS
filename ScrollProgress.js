@@ -55,11 +55,12 @@ var ScrollProgress = (function() {
 
   // Public method to update configuration
   function setConfig(newConfig) {
-    destroy()
+    ScrollProgress.destroy()
+    ScrollProgress.destroy()
     if (newConfig && typeof newConfig === 'object') {
       config = Object.assign({}, config, newConfig);
     }
-    init()
+    init(config)
   }
 
   // Public method to destroy the progress bar
