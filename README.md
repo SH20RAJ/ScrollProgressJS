@@ -4,6 +4,7 @@ ScrollProgressJS is a lightweight JavaScript library that creates a customizable
 
 - [DEMO](https://sh20raj.github.io/ScrollProgressJS/demo.html)
 - [GitHub](https://github.com/SH20RAJ/ScrollProgressJS/)
+- [Dev.to](https://dev.to/sh20raj/create-scroll-progress-indicator-on-blogwebsite-4e6)
 
 
 ![ScrollProgressJS Demo](demo.gif)
