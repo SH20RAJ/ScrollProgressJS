@@ -61,8 +61,8 @@ After initialization, you can update the configuration:
 
 ```javascript
 ScrollProgress.setConfig({
-  color: '#4caf50',  // Updated color
-  height: '2px',     // Updated height
+  color: 'hotpink',  // Updated color
+  height: '4px',     // Updated height
   position: 'top'    // Updated position
 });
 ```
