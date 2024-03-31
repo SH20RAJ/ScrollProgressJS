@@ -30,7 +30,7 @@ You can include ScrollProgressJS in your project via CDN, npm, or by downloading
 ### npm
 
 ```bash
-npm install scroll-progress-js
+npm install scroll-progress-indicator
 ```
 
 ### Download
@@ -94,14 +94,14 @@ You can also use ScrollProgressJS in Node.js applications:
 Install the library using npm:
 
 ```bash
-npm install scroll-progress-js
+npm install scroll-progress-indicator
 ```
 
 #### Usage
 
 ```javascript
 // Import ScrollProgress
-const ScrollProgress = require('scroll-progress-js');
+const ScrollProgress = require('scroll-progress-indicator');
 
 // Initialize
 ScrollProgress.init();
