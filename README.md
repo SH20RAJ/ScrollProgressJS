@@ -1,11 +1,12 @@
-# ScrollProgressJS [![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2FScrollProgressJS&labelColor=%23ff8a65&countColor=%2337d67a&labelStyle=upper)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2FScrollProgressJS) [![](https://data.jsdelivr.com/v1/package/gh/SH20RAJ/ScrollProgressJS/badge)](https://www.jsdelivr.com/package/gh/SH20RAJ/ScrollProgressJS)
+# ScrollProgressJS
+
+[![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2FScrollProgressJS&labelColor=%23ff8a65&countColor=%2337d67a&labelStyle=upper&style=flat)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2FScrollProgressJS) [![](https://data.jsdelivr.com/v1/package/gh/SH20RAJ/ScrollProgressJS/badge)](https://www.jsdelivr.com/package/gh/SH20RAJ/ScrollProgressJS)
 
 ScrollProgressJS is a lightweight JavaScript library that creates a customizable scroll progress indicator for web pages. It allows you to display a visual progress bar indicating how much of the page has been scrolled.
 
 - [DEMO](https://sh20raj.github.io/ScrollProgressJS/demo.html)
 - [GitHub](https://github.com/SH20RAJ/ScrollProgressJS/)
 - [Dev.to](https://dev.to/sh20raj/create-scroll-progress-indicator-on-blogwebsite-4e6)
-
 
 ![ScrollProgressJS Demo](demo.gif)
 
@@ -18,12 +19,18 @@ ScrollProgressJS is a lightweight JavaScript library that creates a customizable
 
 ## Installation
 
-You can include ScrollProgressJS in your project via CDN or by downloading the script:
+You can include ScrollProgressJS in your project via CDN, npm, or by downloading the script:
 
 ### CDN
 
 ```html
 <script src="https://cdn.jsdelivr.net/gh/SH20RAJ/ScrollProgressJS@main/ScrollProgress.js"></script>
+```
+
+### npm
+
+```bash
+npm install scroll-progress-js
 ```
 
 ### Download
@@ -32,7 +39,9 @@ You can include ScrollProgressJS in your project via CDN or by downloading the s
 
 ## Usage
 
-### Basic Initialization
+### Browser
+
+#### Basic Initialization
 
 To initialize ScrollProgressJS with default settings:
 
@@ -40,7 +49,7 @@ To initialize ScrollProgressJS with default settings:
 <script src="https://cdn.jsdelivr.net/gh/SH20RAJ/ScrollProgressJS@main/ScrollProgress.js" data-autoload="true"></script>
 ```
 
-### Advanced Configuration
+#### Advanced Configuration
 
 You can also customize the progress bar with your own configurations:
 
@@ -56,7 +65,7 @@ You can also customize the progress bar with your own configurations:
 </script>
 ```
 
-### Updating Configuration
+#### Updating Configuration
 
 After initialization, you can update the configuration:
 
@@ -68,11 +77,43 @@ ScrollProgress.setConfig({
 });
 ```
 
-### Destroying the Progress Bar
+#### Destroying the Progress Bar
 
 To remove the ScrollProgressJS and stop listening for scroll events:
 
 ```javascript
+ScrollProgress.destroy();
+```
+
+### Node.js
+
+You can also use ScrollProgressJS in Node.js applications:
+
+#### Installation
+
+Install the library using npm:
+
+```bash
+npm install scroll-progress-js
+```
+
+#### Usage
+
+```javascript
+// Import ScrollProgress
+const ScrollProgress = require('scroll-progress-js');
+
+// Initialize
+ScrollProgress.init();
+
+// Update configuration (example)
+ScrollProgress.setConfig({
+  color: '#ff0000',
+  height: '6px',
+  position: 'bottom'
+});
+
+// Destroy
 ScrollProgress.destroy();
 ```
 
