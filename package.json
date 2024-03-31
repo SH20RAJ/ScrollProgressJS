@@ -1,8 +1,8 @@
 {
   "name": "scroll-progress-indicator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight JavaScript library for creating scroll progress indicators.",
-  "main": "ScrollProgress.js",
+  "main": "ScrollProgress.module.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
