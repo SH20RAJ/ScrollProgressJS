@@ -1,0 +1,28 @@
+{
+  "name": "scroll-progress-js",
+  "version": "1.0.0",
+  "description": "A lightweight JavaScript library for creating scroll progress indicators.",
+  "main": "ScrollProgress.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SH20RAJ/ScrollProgressJS.git"
+  },
+  "keywords": [
+    "scroll",
+    "progress",
+    "indicator",
+    "javascript",
+    "library"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SH20RAJ/ScrollProgressJS/issues"
+  },
+  "homepage": "https://github.com/SH20RAJ/ScrollProgressJS",
+  "dependencies": {},
+  "devDependencies": {}
+}
