@@ -16,6 +16,7 @@ ScrollProgressJS is a lightweight JavaScript library that creates a customizable
 - **Auto-Initialization**: Automatically initializes if `data-autoload` attribute is set.
 - **Responsive**: Adjusts dynamically as users scroll through the page.
 - **Lightweight**: Simple and efficient library with no external dependencies.
+- **Scroll Element Selector**: Specify the element to track for scroll progress.
 
 ## Installation
 
@@ -83,6 +84,14 @@ To remove the ScrollProgressJS and stop listening for scroll events:
 
 ```javascript
 ScrollProgress.destroy();
+```
+
+#### Scroll Element Selector
+
+You can specify the element to track for scroll progress using its selector:
+
+```javascript
+ScrollProgress.setScrollElement('.article'); // Example: Track scroll progress of the .article element
 ```
 
 ### Node.js
