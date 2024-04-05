@@ -8,11 +8,13 @@ var ScrollProgress = (function() {
     position: 'top'
   };
 
+  var scrollElement = document.documentElement; // Default to document
+
   // Function to update the progress bar
   function updateProgressBar(progressBar) {
     return function() {
-      var scroll = document.documentElement.scrollTop || document.body.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scroll = scrollElement.scrollTop;
+      var height = scrollElement.scrollHeight - scrollElement.clientHeight;
       var scrolled = (scroll / height) * 100;
       progressBar.style.width = scrolled + '%';
     };
@@ -55,12 +57,19 @@ var ScrollProgress = (function() {
 
   // Public method to update configuration
   function setConfig(newConfig) {
-    ScrollProgress.destroy()
-    ScrollProgress.destroy()
     if (newConfig && typeof newConfig === 'object') {
       config = Object.assign({}, config, newConfig);
     }
-    init(config)
+  }
+
+  // Public method to set the element to track scroll
+  function setScrollElement(elementSelector) {
+    var element = document.querySelector(elementSelector);
+    if (element) {
+      scrollElement = element;
+    } else {
+      console.error('ScrollProgress: Element not found with selector:', elementSelector);
+    }
   }
 
   // Public method to destroy the progress bar
@@ -81,6 +90,7 @@ var ScrollProgress = (function() {
   return {
     init: init,
     setConfig: setConfig,
+    setScrollElement: setScrollElement,
     destroy: destroy
   };
 })();
